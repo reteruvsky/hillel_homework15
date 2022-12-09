@@ -5,13 +5,15 @@ import java.util.Queue;
 
 public class CoffeeOrderBoard {
     private Queue<Order> list = new LinkedList<>();
+    private int orderNumber;
 
     public Queue<Order> getList() {
         return list;
     }
 
-    public void add(Order order) {
-        list.add(order);
+    public void add(String name) {
+        orderNumber++;
+        list.add(new Order(orderNumber, name));
     }
 
     public Order deliver() {
